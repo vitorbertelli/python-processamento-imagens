@@ -324,8 +324,17 @@ if __name__ == '__main__':
 
     # QUESTÃO 6
     construct = Imagem.carregar("test_images/construct.png")
+    
+    kernel_x = [[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]]
+    kernel_y = [[-1, -2, -1], [0, 0, 0], [1, 2, 1]]
+    construct_x = construct.aplicar_correlacao(kernel_x)
+    construct_y = construct.aplicar_correlacao(kernel_y)
+    construct_x.mostrar()
+    construct_y.mostrar()
+    
     construct_bordas = construct.bordas()
     construct_bordas.salvar("respostas/construct_bordas.png")
+
 
     # O código a seguir fará com que as janelas de Imagem.mostrar
     # sejam exibidas corretamente, quer estejamos executando

@@ -108,6 +108,13 @@ class TestKernel(unittest.TestCase):
                                  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
         self.assertEqual(resultado, esperado)
 
+    def test_translacao_2(self):
+        kernel_translacao = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [1, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+        imagem = pset1.Imagem(5, 1, [29, 89, 136, 200, 255])
+        resultado = imagem.aplicar_correlacao(kernel_translacao)
+        esperado = pset1.Imagem(5, 1, [29, 29, 29, 89, 136])
+        self.assertEqual(resultado, esperado)
+
     def test_media(self):
         kernel_media = [[0, 0.2, 0.0], [0.2, 0.2, 0.2], [0.0, 0.2, 0.0]]
         im = pset1.Imagem(3, 3, [10, 20, 30, 40, 50, 60, 70, 80, 90])
