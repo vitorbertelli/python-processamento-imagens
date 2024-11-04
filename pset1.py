@@ -69,7 +69,7 @@ class Imagem:
             # Laço que percorre a matriz do kernel.
             for i in range(n):
                 for j in range(n):
-                    soma_ponderada += kernel[i][j] * self.get_pixel(x + i - deslocamento, y + j - deslocamento)
+                    soma_ponderada += kernel[j][i] * self.get_pixel(x + i - deslocamento, y + j - deslocamento)
             return soma_ponderada # Após a operação, o valor resultante é retornado e será defino no pixel (x, y) na função aplicar_por_pixel.
 
         return self.aplicar_por_pixel(func) # Retorna a imagem resultante após a aplicação da correlação, não aplica diretamente a imagem original.
